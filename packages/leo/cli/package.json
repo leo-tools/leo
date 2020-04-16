@@ -1,0 +1,39 @@
+{
+  "name": "leo",
+  "version": "1.0.0",
+  "description": "A front end cli for angular vue and react project",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "leo": "bin/leo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leo-tools/leo.git"
+  },
+  "keywords": [
+    "leo-tools",
+    "CLi",
+    "Front-end",
+    "Angular",
+    "Vue",
+    "React"
+  ],
+  "author": "tc9011",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leo-tools/leo/issues"
+  },
+  "homepage": "https://github.com/leo-tools/leo#readme",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "commander": "^5.0.0",
+    "execa": "^4.0.0",
+    "inquirer": "^7.1.0",
+    "minimist": "^1.2.5",
+    "ora": "^4.0.3",
+    "strip-ansi": "^6.0.0",
+    "validate-npm-package-name": "^3.0.0"
+  }
+}
