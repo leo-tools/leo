@@ -24,7 +24,7 @@ exports.logWithSpinner = (symbol, msg) => {
   spinner.start()
 }
 
-exports.stopSpinner = (persist) => {
+exports.stopSpinner = persist => {
   if (lastMsg && persist !== false) {
     spinner.stopAndPersist({
       symbol: lastMsg.symbol,
@@ -50,6 +50,6 @@ exports.resumeSpinner = () => {
   }
 }
 
-exports.failSpinner = (text) => {
+exports.failSpinner = text => {
   spinner.fail(text)
 }

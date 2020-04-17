@@ -15,13 +15,10 @@ function _log (type, tag, message) {
   }
 }
 
-const format = (label, msg) => {
-  return msg.split('\n').map((line, i) => {
-    return i === 0
-      ? `${label} ${line}`
-      : line.padStart(stripAnsi(label).length)
-  }).join('\n')
-}
+const format = (label, msg) => msg
+  .split('\n')
+  .map((line, i) => (i === 0 ? `${label} ${line}` : line.padStart(stripAnsi(label).length)))
+  .join('\n')
 
 const chalkTag = msg => chalk.bgBlackBright.white.dim(` ${msg} `)
 
