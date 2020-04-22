@@ -2,6 +2,9 @@
   "name": "leo",
   "version": "1.0.0",
   "description": "A front end cli for angular vue and react project",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
