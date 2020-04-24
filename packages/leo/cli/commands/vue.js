@@ -1,3 +1,4 @@
+const execa = require('execa')
 const chalk = require('chalk')
 const inquirer = require('inquirer')
 const { failSpinner } = require('../utils/spinner')
@@ -12,11 +13,11 @@ async function initVue (projectName) {
     await run('npm', ['install', '@vue/cli', '-g'])
   }
 
-  const { isDefault } = await inquirer.prompt([
+  const { isRecommendSetting } = await inquirer.prompt([
     {
       type: 'confirm',
       message: ' Would you like to use recommend settings for vue project ?',
-      name: 'isDefault',
+      name: 'isRecommendSetting',
       default: true
     }
   ])
@@ -24,8 +25,13 @@ async function initVue (projectName) {
   await clearConsole()
   logWithSpinner(`Creating an Vue project by ${chalk.yellow('leo')} . \n`)
   try {
-    if (isDefault) {
-      await run('vue', ['create', '--preset', 'leo-tools/vue-cli-preset', projectName])
+    if (isRecommendSetting) {
+      const child = execa('vue', ['create', projectName])
+      child.stdout.on('data', buffer => {
+        const str = buffer.toString().trim()
+        // TODO 解析 str 为可交互
+        console.log(str)
+      })
     } else {
       await run('vue', ['create', '--default', projectName])
     }
