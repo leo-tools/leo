@@ -25,15 +25,14 @@ async function initVue (projectName) {
   await clearConsole()
   logWithSpinner(`Creating an Vue project by ${chalk.yellow('leo')} . \n`)
   try {
-    if (isRecommendSetting) {
+    if (!isRecommendSetting) {
       const child = execa('vue', ['create', projectName])
       child.stdout.on('data', buffer => {
         const str = buffer.toString().trim()
-        // TODO 解析 str 为可交互
         console.log(str)
       })
     } else {
-      await run('vue', ['create', '--default', projectName])
+      await run('vue', ['create', '--preset', 'leo-tools/vue-cli-preset', projectName])
     }
     stopSpinner()
   } catch (e) {
