@@ -34,7 +34,7 @@
     "commander": "^5.0.0",
     "execa": "^4.0.0",
     "inquirer": "^7.1.0",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "ora": "^4.0.3",
     "strip-ansi": "^6.0.0",
     "validate-npm-package-name": "^3.0.0"
